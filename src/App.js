@@ -21,7 +21,7 @@ function App() {
     }
 
 
-    const dateBuilder = (d) => {
+    const myDate = (d) => {
         let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
@@ -30,7 +30,7 @@ function App() {
         let date = d.getDate();
         let year = d.getFullYear();
 
-        return `${day}, ${date} ${month}, ${year}`
+        return `${day}, ${date} ${month}, ${year}` //date builder
     }
 
     const setBG = () => {
@@ -41,10 +41,7 @@ function App() {
         else return "app warm";
     }
 
-
-
-
-    return (
+    return (                //background handle
         <div className={setBG()}>
             <main>
                 <div className="search-bar">
@@ -60,7 +57,7 @@ function App() {
                     <div>
                         <div className="location-box">
                             <h2 className="location">{weather.name}, {weather.sys.country}</h2>
-                            <p className="date">{dateBuilder(new Date())}</p>
+                            <p className="date">{myDate(new Date())}</p>
                             <div className="temp">{weather.main.temp}°C</div>
                             <p className="type">{weather.weather[0].main}</p>
                             <div className="other-dets">
@@ -86,9 +83,6 @@ function App() {
                         <div className="welcome-box">
                             <div className="welcome-text">
                                 <h1>welcome</h1>
-                                <p>
-                                    Weather updates for arround 200,000 cities
-                                </p>
                             </div>
                         </div>
 
